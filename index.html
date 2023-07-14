@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap"
+    />
+    <script
+      src="https://kit.fontawesome.com/ee6eb0c187.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      body {
+        font-family: "Hanken Grotesk", sans-serif;
+        background-color: rgb(245, 245, 245);
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .item {
+        width: 250px;
+      }
+
+      .result {
+        color: white;
+        padding: 10px 15px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(
+          hsl(252, 100%, 67%),
+          hsl(241, 81%, 54%)
+        );
+        border-radius: 30px;
+      }
+      .summary {
+        display: flex;
+        height: 400px;
+        padding: 10px 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+
+        border-top-right-radius: 30px;
+        border-top-right-radius: 30px;
+      }
+
+      .score {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        width: 120px;
+        height: 120px;
+        background-image: linear-gradient(
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .score .point {
+        color: white;
+        font-weight: 700;
+        font-size: 56px;
+      }
+      .features {
+        width: 90%;
+      }
+
+      .features .feature {
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 4px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(12, 100%, 96%);
+        font-weight: 500;
+      }
+
+      .features .feature:nth-child(1) {
+        color: hsl(0, 100%, 67%);
+      }
+
+      .features .feature:nth-child(2) {
+        color: hsl(39, 100%, 56%);
+      }
+      .features .feature:nth-child(3) {
+        color: hsl(166, 100%, 37%);
+      }
+      .features .feature:nth-child(4) {
+        color: hsl(234, 85%, 45%);
+      }
+
+      .features .feature .rate {
+        color: rgb(83, 83, 83);
+      }
+
+      .features .button {
+        width: 100%;
+        margin-top: 4px;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 100px;
+        background-color: #313a5a;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          display: block !important;
+        }
+        .item {
+          margin: 0 auto;
+        }
+        .result {
+          border-bottom-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+        }
+        .summary {
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" style="background-color: white">
+        <div class="result">
+          <h3 style="color: hsl(241, 100%, 89%)">Your Result</h3>
+          <div class="score">
+            <span class="point">76</span>
+            <span style="color: hsl(241, 100%, 89%)">of 100</span>
+          </div>
+          <h2>Great</h2>
+          <span style="color: hsl(241, 100%, 89%)">
+            You scored higher than 65% of the people who have taken these tests.
+          </span>
+        </div>
+      </div>
+      <div class="item">
+        <div class="summary">
+          <h3>Summary</h3>
+          <div class="features">
+            <div class="feature">
+              <span> <i class="fas fa-bolt">&nbsp;Reaction&nbsp;</i></span>
+              <span class="rate"><b>80</b> /100</span>
+            </div>
+            <div class="feature">
+              <span> <i class="fas fa-brain">&nbsp;Memory</i></span>
+              <span class="rate"><b>92</b> /100</span>
+            </div>
+            <div class="feature">
+              <span> <i class="far fa-comment-dots">&nbsp;Verbal</i></span>
+              <span class="rate"><b>61</b> /100</span>
+            </div>
+            <div class="feature">
+              <span> <i class="far fa-eye">&nbsp;Visual</i></span>
+              <span class="rate"><b>72</b> /100</span>
+            </div>
+            <button class="button">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Tolga</a>.
+    </div>
+  </body>
+</html>
