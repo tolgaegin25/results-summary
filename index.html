@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -13,204 +12,139 @@
     />
 
     <title>Frontend Mentor | Results summary component</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap"
-    />
-    <script
-      src="https://kit.fontawesome.com/ee6eb0c187.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              light_red: "#ff5757",
+              orange_yellow: "#ffb01f",
+              green_teal: "#00bd91",
+              cobalt: "#1125d4",
+              light_slate_blue: "#7857ff",
+              light_royal_blue: "	#2e2be9",
+              violet_blue: "#4E21CA",
+              persian_blue: "	#2421ca",
+              pale_blue: "#EBF1FF",
+              light_lavender: "#C8C7FF",
+              dark_gray_blue: "	#303b5a",
+            },
+            screens: {
+              md: "768px", //Size of medium screen
+            },
+          },
+        },
+      };
+    </script>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
       * {
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
-      }
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-        margin-top: 10px;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
+        font-family: "Hanken Grotesk", sans-serf;
+        font-size: 18px;
       }
 
       body {
-        font-family: "Hanken Grotesk", sans-serif;
-        background-color: rgb(245, 245, 245);
-        width: 100vw;
-        height: 100vh;
-      }
-
-      .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .item {
-        width: 250px;
-      }
-
-      .result {
-        color: white;
-        padding: 10px 15px;
-        height: 400px;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: linear-gradient(
-          hsl(252, 100%, 67%),
-          hsl(241, 81%, 54%)
-        );
-        border-radius: 30px;
-      }
-      .summary {
-        display: flex;
-        height: 400px;
-        padding: 10px 15px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-
-        border-top-right-radius: 30px;
-        border-top-right-radius: 30px;
-      }
-
-      .score {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 100px;
-        width: 120px;
-        height: 120px;
-        background-image: linear-gradient(
-          hsla(256, 72%, 46%, 1),
-          hsla(241, 72%, 46%, 0)
-        );
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      }
-
-      .score .point {
-        color: white;
-        font-weight: 700;
-        font-size: 56px;
-      }
-      .features {
-        width: 90%;
-      }
-
-      .features .feature {
-        padding: 10px;
-        margin-top: 8px;
-        border-radius: 4px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        background-color: hsl(12, 100%, 96%);
-        font-weight: 500;
-      }
-
-      .features .feature:nth-child(1) {
-        color: hsl(0, 100%, 67%);
-      }
-
-      .features .feature:nth-child(2) {
-        color: hsl(39, 100%, 56%);
-      }
-      .features .feature:nth-child(3) {
-        color: hsl(166, 100%, 37%);
-      }
-      .features .feature:nth-child(4) {
-        color: hsl(234, 85%, 45%);
-      }
-
-      .features .feature .rate {
-        color: rgb(83, 83, 83);
-      }
-
-      .features .button {
-        width: 100%;
-        margin-top: 4px;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 100px;
-        background-color: #313a5a;
-        color: white;
-        cursor: pointer;
-      }
-
-      @media screen and (max-width: 768px) {
-        .container {
-          display: block !important;
-        }
-        .item {
-          margin: 0 auto;
-        }
-        .result {
-          border-bottom-left-radius: 30px;
-          border-bottom-right-radius: 30px;
-        }
-        .summary {
-          border-top-left-radius: 0px;
-          border-top-right-radius: 0px;
-        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="item" style="background-color: white">
-        <div class="result">
-          <h3 style="color: hsl(241, 100%, 89%)">Your Result</h3>
-          <div class="score">
-            <span class="point">76</span>
-            <span style="color: hsl(241, 100%, 89%)">of 100</span>
-          </div>
-          <h2>Great</h2>
-          <span style="color: hsl(241, 100%, 89%)">
-            You scored higher than 65% of the people who have taken these tests.
+    <div
+      class="h-auto md:w-[736px] w-[320px] flex md:flex-row flex-col bg-white shadow-[20px_20px_30px_rgba(0,0,0,0.2)] rounded-[30px]"
+    >
+      <div
+        class="w-full flex flex-col items-center p-[45px] rounded-[30px] bg-gradient-to-b from-light_slate_blue to-light_royal_blue"
+      >
+        <h2 class="text-2xl text-light_lavender">Your Result</h2>
+        <div
+          class="bg-white w-[200px] h-[200px] rounded-[50%] mt-10 flex flex-col items-center justify-center relative bg-gradient-to-b from-violet_blue to-persian_blue"
+        >
+          <strong class="text-[72px] text-white -translate-y-2.5">76</strong>
+          <span
+            class="absolute bottom-10 text-white opacity-40 text-[20px] translate-y-3"
+          >
+            of 100
           </span>
         </div>
+        <div class="text-white text-[2em] height-[80px] leading-[80px]">
+          Great
+        </div>
+        <p class="text-light_lavender text-[1em] text-center py-0 px-10">
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
       </div>
-      <div class="item">
-        <div class="summary">
-          <h3>Summary</h3>
-          <div class="features">
-            <div class="feature">
-              <span> <i class="fas fa-bolt">&nbsp;Reaction&nbsp;</i></span>
-              <span class="rate"><b>80</b> /100</span>
+      <div class="flex flex-col p-10 w-full">
+        <h2 class="text-2xl mb-2.5">Summary</h2>
+        <div class="w-full">
+          <div
+            class="flex h-14 w-full mx-0 my-4 gap-3.5 rounded-[10px] items-center px-[14px] relative text-light_red bg-light_red bg-opacity-10"
+          >
+            <img src="./assets/images/icon-reaction.svg" alt="" />
+            <div>Reaction</div>
+            <div
+              class="absolute right-3.5 text-black flex space-between items-center w-1/4"
+            >
+              <span class="got font-extrabold">80</span>/<span
+                class="font-bold text-black opacity-[0.8]"
+                >100</span
+              >
             </div>
-            <div class="feature">
-              <span> <i class="fas fa-brain">&nbsp;Memory</i></span>
-              <span class="rate"><b>92</b> /100</span>
+          </div>
+          <div
+            class="flex h-14 mx-0 my-4 gap-3.5 rounded-[10px] items-center px-3.5 relative text-orange_yellow bg-orange_yellow bg-opacity-10"
+          >
+            <img src="./assets/images/icon-memory.svg" alt="" />
+            <div>Memory</div>
+            <div
+              class="absolute right-3.5 text-black flex space-between items-center w-1/4"
+            >
+              <span class="font-extrabold">92</span>/<span
+                class="font-bold text-black opacity-[0.8]"
+                >100</span
+              >
             </div>
-            <div class="feature">
-              <span> <i class="far fa-comment-dots">&nbsp;Verbal</i></span>
-              <span class="rate"><b>61</b> /100</span>
+          </div>
+          <div
+            class="flex h-[56px] mx-0 my-4 gap-[14px] rounded-[10px] items-center px-[14px] relative text-green_teal bg-green_teal bg-opacity-10"
+          >
+            <img src="./assets/images/icon-verbal.svg" alt="" />
+            <div>Verbal</div>
+            <div
+              class="score absolute right-3.5 text-black flex space-between items-center w-1/4"
+            >
+              <span class="font-extrabold"> 61 </span>
+              /<span class="font-bold text-black opacity-[0.8]">100</span>
             </div>
-            <div class="feature">
-              <span> <i class="far fa-eye">&nbsp;Visual</i></span>
-              <span class="rate"><b>72</b> /100</span>
+          </div>
+          <div
+            class="flex h-[56px] mx-0 my-4 gap-[14px] rounded-[10px] items-center px-[14px] relative text-cobalt bg-cobalt bg-opacity-10"
+          >
+            <img src="./assets/images/icon-visual.svg" alt="" />
+            <div>Visual</div>
+            <div
+              class="absolute right-3.5 text-black flex space-between items-center w-1/4"
+            >
+              <span class="font-extrabold"> 72 </span>
+              /<span class="font-bold text-black opacity-[0.8]">100</span>
             </div>
-            <button class="button">Continue</button>
           </div>
         </div>
+        <button
+          class="h-14 bg-dark_gray_blue px-1 py-2 text-white font-medium mt-5 rounded-[30px] border-none cursor-pointer hover:bg-opacity-90  duration-300"
+        >
+          Continue
+        </button>
       </div>
-    </div>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Tolga</a>.
     </div>
   </body>
 </html>
