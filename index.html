@@ -13,6 +13,12 @@
 
     <title>Frontend Mentor | Results summary component</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -25,8 +31,8 @@
               cobalt: "#1125d4",
               light_slate_blue: "#7857ff",
               light_royal_blue: "	#2e2be9",
-              violet_blue: "#4E21CA",
-              persian_blue: "	#2421ca",
+              violet_blue: "rgba(77, 32, 201, 1)",
+              persian_blue: "rgba(35, 32, 201, .8)",
               pale_blue: "#EBF1FF",
               light_lavender: "#C8C7FF",
               dark_gray_blue: "	#303b5a",
@@ -38,36 +44,17 @@
         },
       };
     </script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
-
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: "Hanken Grotesk", sans-serf;
-        font-size: 18px;
-      }
-
-      body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
   </head>
   <body>
     <div
-      class="h-auto md:w-[736px] w-[320px] flex md:flex-row flex-col bg-white shadow-[20px_20px_30px_rgba(0,0,0,0.2)] rounded-[30px]"
+      class="h-auto md:w-[736px] w-[320px] flex md:flex-row flex-col bg-white shadow-[20px_20px_30px_rgba(0,0,0,0.1)] rounded-[30px]"
     >
       <div
-        class="w-full flex flex-col items-center p-[45px] rounded-[30px] bg-gradient-to-b from-light_slate_blue to-light_royal_blue"
+        class="w-full h-auto flex flex-col items-center p-[45px] rounded-[30px] bg-gradient-to-b from-light_slate_blue to-light_royal_blue"
       >
         <h2 class="text-2xl text-light_lavender">Your Result</h2>
         <div
-          class="bg-white w-[200px] h-[200px] rounded-[50%] mt-10 flex flex-col items-center justify-center relative bg-gradient-to-b from-light_slate_blue to-light_royal_blue"
+          class="bg-white w-[200px] h-[200px] rounded-[50%] mt-10 flex flex-col items-center justify-center relative bg-gradient-to-b from-violet_blue to-persian_blue"
         >
           <strong class="text-[72px] text-white -translate-y-2.5">76</strong>
           <span
@@ -76,7 +63,7 @@
             of 100
           </span>
         </div>
-        <div class="text-white text-[2em] height-[80px] leading-[80px]">
+        <div class="text-white font-bold text-[2em] height-[80px] leading-[80px]">
           Great
         </div>
         <p class="text-light_lavender text-[1em] text-center py-0 px-10">
@@ -94,8 +81,8 @@
             <div
               class="absolute right-3.5 text-black flex space-between items-center w-1/4"
             >
-              <span class="got font-extrabold">80</span>/<span
-                class="font-bold text-black opacity-[0.8]"
+              <span class="font-extrabold">80</span>&nbsp;/&nbsp;<span
+                class="font-medium text-black opacity-[0.6]"
                 >100</span
               >
             </div>
@@ -108,8 +95,8 @@
             <div
               class="absolute right-3.5 text-black flex space-between items-center w-1/4"
             >
-              <span class="font-extrabold">92</span>/<span
-                class="font-bold text-black opacity-[0.8]"
+              <span class="font-extrabold">92</span>&nbsp;/&nbsp;<span
+                class="font-medium text-black opacity-[0.6]"
                 >100</span
               >
             </div>
@@ -123,7 +110,9 @@
               class="score absolute right-3.5 text-black flex space-between items-center w-1/4"
             >
               <span class="font-extrabold"> 61 </span>
-              /<span class="font-bold text-black opacity-[0.8]">100</span>
+              &nbsp;/&nbsp;<span class="font-medium text-black opacity-[0.6]"
+                >100</span
+              >
             </div>
           </div>
           <div
@@ -135,12 +124,14 @@
               class="absolute right-3.5 text-black flex space-between items-center w-1/4"
             >
               <span class="font-extrabold"> 72 </span>
-              /<span class="font-bold text-black opacity-[0.8]">100</span>
+              &nbsp;/&nbsp;<span class="font-medium text-black opacity-[0.6]"
+                >100</span
+              >
             </div>
           </div>
         </div>
         <button
-          class="h-14 bg-dark_gray_blue px-1 py-2 text-white font-medium mt-5 rounded-[30px] border-none cursor-pointer hover:bg-opacity-90  duration-300"
+          class="h-14 bg-dark_gray_blue px-1 py-2 text-white font-medium mt-5 rounded-[30px] border-none cursor-pointer hover:bg-opacity-90 duration-300"
         >
           Continue
         </button>
